@@ -18,7 +18,7 @@ podTemplate(
     def KUBE_NAMESPACE
     def IMAGE_NAME = "backend-user"
     def ENVIRONMENT 
-    //def GIT_REPOS_URL = "https://github.com/jefersonaraujo/questcode-backend-user.git"
+    def GIT_REPOS_URL = "https://github.com/jefersonaraujo/questcode-backend-user.git"
     def GIT_BRANCH 
     def HELM_CHART_NAME = "questcode/backend-user"
     def HELM_DEPLOY_NAME  
@@ -34,10 +34,10 @@ podTemplate(
             REPOS = checkout scm
             GIT_BRANCH = REPOS.GIT_BRANCH
             // Com base na branch, direciona ao ambiente correto
-            if(GIT_BRANCH.equals("master")){
+            if(GIT_BRANCH.equals("origin/master")){
                 KUBE_NAMESPACE = "prod"
                 ENVIRONMENT = "production"
-            } else if (GIT_BRANCH.equals("develop")) {
+            } else if (GIT_BRANCH.equals("origin/develop")) {
                 KUBE_NAMESPACE = "staging"
                 ENVIRONMENT = "staging"
                 IMAGE_POSFIX = "-RC"
