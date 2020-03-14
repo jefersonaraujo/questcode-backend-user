@@ -24,7 +24,7 @@ podTemplate(
     def HELM_DEPLOY_NAME  
     def CHARTMUSEUM_URL = "http://helm-chartmuseum:8080"
     def INGRESS_HOST = "questcode.org"
-    def NODE_PORT = "30022"
+    def NODE_PORT = "30020"
     node('LABEL_ID') {
 
 
@@ -41,7 +41,7 @@ podTemplate(
                 KUBE_NAMESPACE = "staging"
                 ENVIRONMENT = "staging"
                 IMAGE_POSFIX = "-RC"
-                NODE_PORT = "30020"
+                NODE_PORT = "30022"
                 INGRESS_HOST = "staging.questcode.org"
             } else {
                 def error = "Nao existe pipeline para a branch ${GIT_BRANCH}"
