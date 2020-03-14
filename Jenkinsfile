@@ -24,7 +24,7 @@ podTemplate(
     def HELM_DEPLOY_NAME  
     def CHARTMUSEUM_URL = "http://helm-chartmuseum:8080"
     def INGRESS_HOST = "questcode.org"
-    def NODE_PORT = "30022"
+    def NODE_PORT = "31020"
     node('LABEL_ID') {
 
 
