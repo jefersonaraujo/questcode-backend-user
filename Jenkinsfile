@@ -49,7 +49,7 @@ podTemplate(
                 throw new Exception(error)
             }
             HELM_DEPLOY_NAME = KUBE_NAMESPACE + "-backend-user"
-            //REPOS = git credentialsId: 'Github', url: GIT_REPOS_URL     
+            ///REPOS = git credentialsId: 'Github', url: GIT_REPOS_URL     
             IMAGE_VERSION = sh returnStdout: true, script: 'sh  read-package-version.sh'
             IMAGE_VERSION = IMAGE_VERSION.trim() + IMAGE_POSFIX          
         }
